@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.github.lecturecartebancaire"
-        minSdk = 28
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

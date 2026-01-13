@@ -108,12 +108,14 @@ class MainActivity : ComponentActivity() {
                 val vibrator =
                     this@MainActivity.getSystemService(VIBRATOR_SERVICE) as Vibrator
 
-                vibrator.vibrate(
-                    VibrationEffect.createOneShot(
-                        1000,
-                        VibrationEffect.DEFAULT_AMPLITUDE
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    vibrator.vibrate(
+                        VibrationEffect.createOneShot(
+                            1000,
+                            VibrationEffect.DEFAULT_AMPLITUDE
+                        )
                     )
-                )
+                }
             },
             NfcAdapter.FLAG_READER_NFC_A or
                     NfcAdapter.FLAG_READER_NFC_B or
